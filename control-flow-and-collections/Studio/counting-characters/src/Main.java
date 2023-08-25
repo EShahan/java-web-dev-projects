@@ -19,22 +19,20 @@ public class Main {
         // turn string into character array
         char[] charactersInString = quote.toCharArray();
 
-        // initialize variable and hash map for loop below
-        Character currentCharacter;
+        // Hash map for loop below
         HashMap<Character, Integer> characterCounts = new HashMap<>();
 
         // Iterates over each string value
-        for (int i = 0; i < quote.length(); i++) {
-            currentCharacter = charactersInString[i];
+        for (char index: charactersInString) {
             // If hashmap doesn't exist for our current string value
-            if (!characterCounts.containsKey(currentCharacter)) {
+            if (!characterCounts.containsKey(index)) {
                 // Make hashmap for that value, making the character the key and our value 1
-                characterCounts.put(currentCharacter, 1);
+                characterCounts.put(index, 1);
             }
             // if hashmap does exist for our current value
             else {
                 // increment that hashmap's value by 1
-                characterCounts.put(currentCharacter, characterCounts.get(currentCharacter) + 1);
+                characterCounts.put(index, characterCounts.get(index) + 1);
             }
         }
 
